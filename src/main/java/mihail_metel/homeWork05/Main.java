@@ -7,6 +7,6 @@ Also, all check methods three times with different apis to demonstrate how progr
  */
 public class Main {
     public static void main(String[] args) {
-
+        System.out.println("Something");
     }
 }
