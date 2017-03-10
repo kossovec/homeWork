@@ -2,7 +2,6 @@ package homeWork05.test;
 
 import homeWork05.*;
 import org.junit.Assert;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 /*
@@ -113,7 +112,7 @@ Chech how many the same rooms two different apis return*/
         Room[] rooms3 = controller.check(controller.getAPIArray()[0],controller.getAPIArray()[2]); // 0
 
         Assert.assertNull("null ",rooms1);
-        Assert.assertEquals("number of repeating ",0, rooms1.length);
+        Assert.assertEquals("zero in first API ",0, rooms1.length);
 
        // Assert.assertNotNull("not null ",rooms2);
         //Assert.assertEquals("number of repeating ",1, rooms2.length);

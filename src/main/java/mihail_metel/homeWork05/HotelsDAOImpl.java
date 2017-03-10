@@ -79,4 +79,8 @@ public class HotelsDAOImpl implements HotelsDAO {
     public void setRooms(Room[] rooms) {
         this.rooms = rooms;
     }
+
+    public int getRoomCount(){
+        return rooms.length;
+    }
 }

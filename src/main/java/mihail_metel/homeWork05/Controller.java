@@ -13,8 +13,6 @@ Room[] check(API api1, API api2)
 Chech how many the same rooms two different apis return
  */
 
-import java.util.Arrays;
-
 public class Controller {
     private API apis[] = new API[3];
 
@@ -40,8 +38,8 @@ public class Controller {
         Room[] tempRooms;
         HotelsDAOImpl tempDAO = new HotelsDAOImpl(new Room[0]);
 
-        for (int i = 0; i < api1.getHotelsDAO().getRooms().length; i++) {
-            for (int i1 = 0; i1 < api2.getHotelsDAO().getRooms().length; i1++) {
+        for (int i = 0; i < api1.getHotelsDAO().getRoomCount(); i++) {
+            for (int i1 = 0; i1 < api2.getHotelsDAO().getRoomCount(); i1++) {
                 if (api1.getHotelsDAO().getRooms()[i].equals(api2.getHotelsDAO().getRooms()[i1] ) ) {
                     tempDAO.save(api1.getHotelsDAO().getRooms()[i]);
                 }
