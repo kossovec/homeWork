@@ -9,7 +9,7 @@ public class APIImpl implements API {
     private String apiName;
 
    public APIImpl(String name, Room[] rooms){
-        this.apiName = name;
+        this.setApiName(name);
         this.hotelsDAO = new HotelsDAOImpl(rooms);
     }
 
@@ -24,8 +24,10 @@ public class APIImpl implements API {
     }
 
     @Override
-    public void setHotelsDAO(HotelsDAOImpl hotelsDAO) {
+    public boolean setHotelsDAO(HotelsDAOImpl hotelsDAO) {
+        if (hotelsDAO == null) return false;
         this.hotelsDAO = hotelsDAO;
+        return true;
     }
 
     @Override
@@ -34,7 +36,12 @@ public class APIImpl implements API {
     }
 
     @Override
-    public void setApiName(String apiName) {
+    public boolean setApiName(String apiName) {
+       if (apiName == null || apiName.equals("")){
+           return false;
+       }
+
         this.apiName = apiName;
+        return true;
     }
 }

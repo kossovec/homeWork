@@ -1,7 +1,8 @@
 package homeWork05;
 
 public interface HotelsDAO {
-    Room save(Room room);
+    Room saveNew(Room room);
+    Room saveAny(Room room);
     boolean delete(Room room);
     Room update(Room room);
     Room findById(long id);

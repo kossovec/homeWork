@@ -10,9 +10,9 @@ public interface API {
 
     public HotelsDAOImpl getHotelsDAO();
 
-    public void setHotelsDAO(HotelsDAOImpl hotelsDAO);
+    public boolean setHotelsDAO(HotelsDAOImpl hotelsDAO);
 
     public String getApiName();
 
-    public void setApiName(String apiName);
+    public boolean setApiName(String apiName);
 }

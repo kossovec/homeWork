@@ -66,7 +66,6 @@ public class FilledRooms {
     }
 
     void FillRooms3(){
-
         Date date = new Date();
         GregorianCalendar calendar = new GregorianCalendar();
 
@@ -80,11 +79,11 @@ public class FilledRooms {
 
         calendar.set(2018, Calendar.MARCH,11);
         date.setTime(calendar.getTimeInMillis());
-        rooms3[2] = new Room(800,1, date,"Hotel three", "Cherkasi");
+        rooms3[2] = new Room(850,1, date,"Hotel three", "Cherkasi");
 
         calendar.set(2017, Calendar.SEPTEMBER,5);
         date.setTime(calendar.getTimeInMillis());
-        rooms3[3] = new Room(1000,2, date,"Hotel four", "Odesa");
+        rooms3[3] = new Room(2000,2, date,"Hotel four", "Odesa");
 
         calendar.set(2017, Calendar.OCTOBER,3);
         date.setTime(calendar.getTimeInMillis());

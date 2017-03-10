@@ -27,7 +27,20 @@ public class HotelsDAOImpl implements HotelsDAO {
     }
 
     @Override
-    public Room save(Room room) {
+    public Room saveNew(Room room) {
+        if (this.findRooms(room.getPrice(), room.getPersons(), room.getCityName(),room.getHotelName() ).length == 0){
+            rooms = Arrays.copyOf(rooms, rooms.length + 1);
+            rooms[rooms.length - 1] =  room;
+            return rooms[rooms.length - 1];
+        }
+        else {
+            update(room);
+            return room;
+        }
+    }
+
+    @Override
+    public Room saveAny(Room room) {
         rooms = Arrays.copyOf(rooms, rooms.length + 1);
         rooms[rooms.length - 1] =  room;
         return rooms[rooms.length - 1];
@@ -39,10 +52,10 @@ public class HotelsDAOImpl implements HotelsDAO {
 
         for (int i = 0; i < rooms.length; i++) {
             if (rooms[i].equals(room)) {
-                tempRooms = Arrays.copyOfRange(rooms, 0, i - 1);
+                tempRooms = Arrays.copyOfRange(rooms, 0, i);
                 tempRooms = Arrays.copyOf(tempRooms,rooms.length - 1);
-                for (int i1 = 0; i1 < tempRooms.length; i1++) {
-                    tempRooms[i + i1] = rooms[i + i1 + 1];
+                for (int j = i; j < tempRooms.length; j++) {
+                    tempRooms[j] = rooms[j + 1];
                 }
                 rooms = tempRooms;
                 return true;
