@@ -12,6 +12,8 @@ String cityName
 Generate getters and setters. And create constructor with all fields.*/
 
 public class Room {
+    static private long roomNumber = 0;
+
     private long id;
     private int price;
     private int persons;
@@ -19,8 +21,9 @@ public class Room {
     private String hotelName;
     private String cityName;
 
-    public Room(long id, int price, int persons, Date dateAvailableFrom, String hotelName, String cityName) {
-        this.id = id;
+    public Room(int price, int persons, Date dateAvailableFrom, String hotelName, String cityName) {
+        this.id = Room.roomNumber;
+        Room.roomNumber++;
         this.price = price;
         this.persons = persons;
         this.dateAvailableFrom = dateAvailableFrom;
@@ -55,9 +58,9 @@ Override equals and hashCode methods. Rooms are equal when price, persons and ci
         return id;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
+//    public void setId(long id) {
+//        this.id = id;
+//    }
 
     public int getPrice() {
         return price;
