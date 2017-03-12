@@ -1,4 +1,4 @@
-package homeWork04;
+package homeWork06.arrayUtilsPack;
 
 class InvalidValueException extends Exception{
     public InvalidValueException(String message){
