@@ -33,11 +33,16 @@ public class UseArrayUtils {
             System.out.println("Минимальное значение массива: " + ArrayUtils.min(intArray));
             System.out.println("Максимальное значение массива: " + ArrayUtils.max(intArray));
             System.out.println("Максимальное положительное значение массива: " + ArrayUtils.maxPositive(intArray));
-            System.out.println("Результат перемножения массива: " + ArrayUtils.multiplication(intArray));
             System.out.println("Остаток от деления первого элемента массива на последний: "
                     + ArrayUtils.modulus(intArray));
             System.out.println("Второе по величине число массива: " + ArrayUtils.secondLargest(intArray));
+            System.out.println("Результат перемножения массива: " + ArrayUtils.multiplication(intArray));
+        }
+        catch (Exception e) {
+            System.out.println(e);
+        }
 
+        try{
             System.out.println("\nДаблы: ");
             System.out.println("Сумма масива: " + ArrayUtils.sum(doubleArray));
             System.out.println("Минимальное значение массива: " + ArrayUtils.min(doubleArray));
@@ -47,7 +52,8 @@ public class UseArrayUtils {
             System.out.println("Остаток от деления первого элемента массива на последний: "
                     + ArrayUtils.modulus(doubleArray));
             System.out.println("Второе по величине число массива: " + ArrayUtils.secondLargest(doubleArray));
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             System.out.println(e);
         }
     }
