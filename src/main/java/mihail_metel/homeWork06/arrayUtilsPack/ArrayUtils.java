@@ -24,6 +24,9 @@ import java.util.Arrays;
 
 public final class ArrayUtils {
 
+    private ArrayUtils() {
+    }
+
     public static int[] reverse(int[] array){
         if (array == null || array.length == 0) {return null;}
 

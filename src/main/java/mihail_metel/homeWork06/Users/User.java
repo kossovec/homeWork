@@ -13,7 +13,7 @@ int balance
 and constructor with all fields.
 */
 
-public class User {
+public final class User {
     private long id;
     private String firstName;
     private String lastName;
@@ -56,39 +56,19 @@ public class User {
         return id;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
     public String getFirstName() {
         return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
     }
 
     public String getLastName() {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
     public int getSalary() {
         return salary;
     }
 
-    public void setSalary(int salary) {
-        this.salary = salary;
-    }
-
     public int getBalance() {
         return balance;
-    }
-
-    public void setBalance(int balance) {
-        this.balance = balance;
     }
 }

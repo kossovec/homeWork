@@ -54,8 +54,9 @@ public class UserUtils {
     static final User[] paySalaryToUsers(User[] users){
         if (users == null || users.length == 0){return null;}
 
+        //        users[5] = new User(6,"Natasha", "Petrova", 6000, 40000);
         for (int i = 0; i < users.length; i++) {
-            users[i].setBalance(users[i].getBalance() + users[i].getSalary());
+            users[i] = new User(users[i].getId(), users[i].getFirstName(),users[i].getLastName(), users[i].getSalary(),users[i].getBalance() + users[i].getSalary());
         }
         return users;
     }
