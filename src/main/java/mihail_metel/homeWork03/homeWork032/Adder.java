@@ -1,4 +1,4 @@
-package homeWork03.homeWork032;
+package main.java.mihail_metel.homeWork03.homeWork032;
 
 public class Adder extends Arithmetic{
 

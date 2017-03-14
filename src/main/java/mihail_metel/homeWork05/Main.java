@@ -1,6 +1,4 @@
-package homeWork05;
-
-import java.util.Arrays;
+package main.java.mihail_metel.homeWork05;
 
 /*
 TASK 7

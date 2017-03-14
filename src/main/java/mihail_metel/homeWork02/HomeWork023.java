@@ -1,4 +1,4 @@
-package homeWork02;
+package main.java.mihail_metel.homeWork02;
 
 /**
  * Created by Mykhailo Metel on 03.02.2017.

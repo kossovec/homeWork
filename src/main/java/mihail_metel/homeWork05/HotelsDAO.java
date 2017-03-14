@@ -1,4 +1,4 @@
-package homeWork05;
+package main.java.mihail_metel.homeWork05;
 
 public interface HotelsDAO {
     Room saveNew(Room room);

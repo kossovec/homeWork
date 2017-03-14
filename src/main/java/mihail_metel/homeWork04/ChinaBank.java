@@ -1,4 +1,4 @@
-package homeWork04;
+package main.java.mihail_metel.homeWork04;
 
 //        ChinaBank: limit of withdrawal = 100 if currency is USD and 150 if currency is EUR
 //        limit of funding - 5000 if EUR and 10000 if USD

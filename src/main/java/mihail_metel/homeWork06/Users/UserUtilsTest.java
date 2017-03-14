@@ -1,4 +1,4 @@
-package homeWork06.Users;
+package main.java.mihail_metel.homeWork06.Users;
 
 import org.junit.Assert;
 import org.junit.Test;

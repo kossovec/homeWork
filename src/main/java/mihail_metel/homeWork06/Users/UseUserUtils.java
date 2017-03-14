@@ -1,4 +1,4 @@
-package homeWork06.Users;
+package main.java.mihail_metel.homeWork06.Users;
 
 /*TASK 6
 Create Main class with main method where you need to create some test users and

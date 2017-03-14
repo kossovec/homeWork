@@ -1,4 +1,4 @@
-package homeWork06.arrayUtilsPack;
+package main.java.mihail_metel.homeWork06.arrayUtilsPack;
 
 import org.junit.Assert;
 import org.junit.Test;

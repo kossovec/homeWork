@@ -1,4 +1,4 @@
-package homeWork04;
+package main.java.mihail_metel.homeWork04;
 
 /*
 

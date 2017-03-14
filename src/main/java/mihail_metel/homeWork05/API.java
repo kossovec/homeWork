@@ -1,4 +1,5 @@
-package homeWork05;
+package main.java.mihail_metel.homeWork05;
+
 
 /*
 TASK  3

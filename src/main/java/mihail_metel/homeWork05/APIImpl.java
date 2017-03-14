@@ -1,4 +1,4 @@
-package homeWork05;
+package main.java.mihail_metel.homeWork05;
 
 /*
 Create three implementations of API called: bookingComAPI, TripAdvisorAPI, GoogleAPI. Every implementation
