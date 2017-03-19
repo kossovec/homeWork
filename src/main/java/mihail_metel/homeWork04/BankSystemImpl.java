@@ -74,21 +74,14 @@ public class BankSystemImpl implements BankSystem
         int commissionTo;
         int limit;
 
-        if (user == null)
-        {
-            throw new InvalidValueException("User incorrect");
-        }
+        if (user == null) {throw new InvalidValueException("User incorrect");}
 
         commissionTo = user.getBank().getCommission(amount);
 
-        if (amount < 0) {
-            throw new InvalidValueException("<0 amount");
-        }
+        if (amount < 0) {throw new InvalidValueException("<0 amount");}
 
         limit = user.getBank().getLimitOfFunding();
-        if ( (amount >= limit) && (limit > 0) ) {
-            throw new InvalidValueException("funding limit");
-        }
+        if ( (amount >= limit) && (limit > 0) ) {throw new InvalidValueException("funding limit");}
 
         user.setBalance(user.getBalance() + amount - commissionTo);
     }

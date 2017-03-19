@@ -4,27 +4,6 @@ import main.java.mihail_metel.homeWork05.*;
 import org.junit.Assert;
 import org.junit.Test;
 
-/*
-test methods reminder:
-Assert.fail();
-Assert.assertNotNull(apiArray);
-Assert.assertNull(apiArray);
-Assert.assertEquals(a, b);
-Assert.assertNotEquals(a, b);
-*/
-
-/*
-TASK 6
-Create Controller class. It contains global variable
-API apis[] = new API[3];
-which contains all impelentations of API interface.
-Also, controller contains two methods
-Room[] requstRooms(int price, int persons, String city, String hotel)
-which finds all the rooms with requested params. Method use all apis available to make search.
-Found rooms create to DB
-Room[] check(API api1, API api2)
-Chech how many the same rooms two different apis return
- */
 
 public class ControllerTest {
     private Controller controller;
@@ -44,10 +23,6 @@ public class ControllerTest {
         Assert.assertNotNull("Not Null",controller.getAPIArray());
         Assert.assertEquals("Lenght of API array ", controller.getAPIArray().length, 3);
     }
-
-//    Room[] requstRooms(int price, int persons, String city, String hotel)
-//    which finds all the rooms with requested params. Method use all apis available to make search.
-//    Found rooms create to DB
 
     @Test
     public void requstRooms() throws Exception {

@@ -12,18 +12,23 @@ public class HotelsDAOImpl implements HotelsDAO {
     }
 
     public Room[] findRooms(int price, int persons, String city, String hotel) {
-        Room[] foundRooms = new Room[0];
+        int foundRoomsCount = 0;
+        final int coefficientOfExtension = 2;
+        Room[] foundRooms = new Room[foundRoomsCount];
 
         for (Room room : rooms) {
             if (room.getPrice() == price &&
                     room.getPersons() == persons &&
                     room.getCityName().equals(city) &&
                     room.getHotelName().equals(hotel)) {
-                foundRooms = Arrays.copyOf(foundRooms, foundRooms.length + 1);
-                foundRooms[foundRooms.length - 1] = room;
+                foundRoomsCount++;
+                if (foundRooms.length < foundRoomsCount) {
+                    foundRooms = Arrays.copyOf(foundRooms, foundRoomsCount * coefficientOfExtension);
+                }
+                foundRooms[foundRoomsCount - 1] = room;
             }
         }
-        return foundRooms;
+        return Arrays.copyOfRange(foundRooms,0, foundRoomsCount);
     }
 
     @Override

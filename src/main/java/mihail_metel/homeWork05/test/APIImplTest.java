@@ -20,18 +20,8 @@ public class APIImplTest {
     }
 
     @Test
-    public void getHotelsDAO() throws Exception {
-
-    }
-
-    @Test
     public void setHotelsDAO() throws Exception {
         Assert.assertEquals(apiImpl.setHotelsDAO(null),false);
-    }
-
-    @Test
-    public void getApiName() throws Exception {
-
     }
 
     @Test

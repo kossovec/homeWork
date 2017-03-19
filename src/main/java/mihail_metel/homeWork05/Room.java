@@ -1,15 +1,6 @@
 package main.java.mihail_metel.homeWork05;
 import java.util.Date;
 
-/*
-Class Room should contain fields
-long id
-int price
-int persons
-Date dateAvailableFrom
-String hotelName
-String cityName
-Generate getters and setters. And create constructor with all fields.*/
 
 public class Room {
     static private long roomNumber = 0;
@@ -30,9 +21,6 @@ public class Room {
         this.hotelName = hotelName;
         this.cityName = cityName;
     }
-
-    /*TASK 2
-Override equals and hashCode methods. Rooms are equal when price, persons and cityName are equal.*/
 
     @Override
     public boolean equals(Object o) {
@@ -57,10 +45,6 @@ Override equals and hashCode methods. Rooms are equal when price, persons and ci
     public long getId() {
         return id;
     }
-
-//    public void setId(long id) {
-//        this.id = id;
-//    }
 
     public int getPrice() {
         return price;

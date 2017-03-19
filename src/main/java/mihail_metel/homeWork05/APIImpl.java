@@ -1,9 +1,6 @@
 package main.java.mihail_metel.homeWork05;
 
-/*
-Create three implementations of API called: bookingComAPI, TripAdvisorAPI, GoogleAPI. Every implementation
-has global variable Room[] rooms which must be initialized in empty constructor with 5 differentRooms.
- */
+
 public class APIImpl implements API {
     private HotelsDAOImpl hotelsDAO;
     private String apiName;
