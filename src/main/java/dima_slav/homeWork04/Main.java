@@ -22,7 +22,7 @@ public class Main {
         Bank chBank2 = new ChinaBank(1006, "Japan", Currency.USD, 68, 126, 1000000000);
 
 
-        //Создаем Users
+        //Создаем User
         //--------------------------------------------------------------------------------
         User user1 = new User(1166, "John", 1500, 25, "Google", 2000, usBank1);
         User user2 = new User(6611, "Mark", 32000, 120, "Microsoft", 4000, usBank2);
