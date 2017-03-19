@@ -1,7 +1,7 @@
-package homeWork04;
+package main.java.mihail_metel.homeWork04;
 
-public class InvalidValueException extends Exception{
-    InvalidValueException(String message){
+class InvalidValueException extends Exception{
+    public InvalidValueException(String message){
         super(message);
     }
 }

@@ -1,4 +1,4 @@
-package homeWork04;
+package main.java.mihail_metel.homeWork04;
 
 // USBank: limit of withdrawal = 1000 if currency is USD and 1200 if currency is EUR
 //        limit of funding - 10000 if EUR and no limit if USD

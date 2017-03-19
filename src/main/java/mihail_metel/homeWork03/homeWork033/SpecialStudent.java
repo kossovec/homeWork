@@ -1,4 +1,4 @@
-package homeWork03.homeWork033;
+package main.java.mihail_metel.homeWork03.homeWork033;
 
 /*You need to create following structure of the classes.
 

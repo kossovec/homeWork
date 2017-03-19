@@ -1,4 +1,4 @@
-package homeWork03.homeWork034;
+package main.java.mihail_metel.homeWork03.homeWork034;
 
 class InvalidValueException extends Exception{
     InvalidValueException(String message){

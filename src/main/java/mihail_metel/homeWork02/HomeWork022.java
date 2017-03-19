@@ -1,4 +1,4 @@
-package homeWork02;
+package main.java.mihail_metel.homeWork02;
 
 // задание:
 //    Continue with BANK example

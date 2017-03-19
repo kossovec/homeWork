@@ -1,11 +1,11 @@
-package homeWork05;
+package main.java.mihail_metel.homeWork05;
 
-/**
- * Created by fluent on 27.02.2017.
- */
 public interface HotelsDAO {
-    Room save(Room room);
+    Room saveNew(Room room);
+    Room saveAny(Room room);
     boolean delete(Room room);
     Room update(Room room);
     Room findById(long id);
+
+    Room[] findRooms(int price, int persons, String city, String hotel);
 }

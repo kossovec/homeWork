@@ -1,4 +1,4 @@
-package homeWork05;
+package main.java.mihail_metel.homeWork05;
 
 /*
 TASK 6
@@ -13,19 +13,42 @@ Room[] check(API api1, API api2)
 Chech how many the same rooms two different apis return
  */
 
-public class Controller implements API {
-    API apis[] = new API[3];
+public class Controller {
+    private API apis[] = new API[3];
 
-    @Override
-    public Room[] findRooms(int price, int persons, String city, String hotel) {
-        return new Room[0];
+    public Controller(API[] apiArray) {
+        this.apis = apiArray;
     }
+
 
     public Room[] requstRooms(int price, int persons, String city, String hotel){
-        return new Room[0];
+        Room[] tempRooms;
+        HotelsDAOImpl tempDAO = new HotelsDAOImpl(new Room[0]);
+
+        for (int i = 0; i < apis.length; i++) {
+            tempRooms = apis[i].findRooms(price, persons, city, hotel) ;
+            for (int i1 = 0; i1 < tempRooms.length; i1++) {
+                tempDAO.saveAny(tempRooms[i1]);
+            }
+        }
+        return tempDAO.getRooms();
     }
 
-    Room[] check(API api1, API api2){
-        return new Room[0];
+    public Room[] check(API api1, API api2){
+        Room[] tempRooms;
+        HotelsDAOImpl tempDAO = new HotelsDAOImpl(new Room[0]);
+
+        for (int i = 0; i < api1.getHotelsDAO().getRoomCount(); i++) {
+            for (int i1 = 0; i1 < api2.getHotelsDAO().getRoomCount(); i1++) {
+                if (api1.getHotelsDAO().getRooms()[i].equals(api2.getHotelsDAO().getRooms()[i1] ) ) {
+                    tempDAO.saveAny(api1.getHotelsDAO().getRooms()[i]);
+                }
+            }
+        }
+        return tempDAO.getRooms();
+    }
+
+    public API[] getAPIArray() {
+        return apis;
     }
 }
