@@ -45,9 +45,10 @@ public final class ArrayUtils {
         if (array.length == 0){
             throw new IllegalArgumentException("The array is empty");
         }
-        int max = array[0];
+        int max = 0;
         for (int i=0; i<array.length; i++) {
-            if (array[0] > 0 && array[i] > max) {
+            if (array[i] > max) {
+            max = array[i]; 
             }
         }
         return max;
