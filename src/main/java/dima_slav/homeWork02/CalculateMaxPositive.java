@@ -5,9 +5,10 @@ public class CalculateMaxPositive {
         if (array.length == 0){
             throw new IllegalArgumentException("The array 1 is empty");
         }
-        int max = array[0];
+        int max = 0;
         for (int i=0; i<array.length; i++) {
-            if (array[0] > 0 && array[i] > max) {
+            if (array[i] > max) {
+            max = array[i];
             }
         }
         return max;
@@ -18,9 +19,10 @@ public class CalculateMaxPositive {
         if (array.length == 0){
             throw new IllegalArgumentException("The array 2 is empty");
         }
-        double max = array[0];
+        double max = 0;
         for (int i = 0; i < array.length; i++) {
-            if (array[0] > 0 && array[i] > max){
+            if (array[i] > max){
+            max = array[i];
             }
         }
         return max;
