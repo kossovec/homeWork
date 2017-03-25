@@ -9,9 +9,9 @@ public class CalculateModulus {
             throw new IllegalArgumentException("Invalid value of last element of array 1 ");
         }
 
-        int a = array[0];
-        int b = array[array.length - 1];
-        int result = a % b;
+        int firstIntElement = array[0];
+        int lastIntElement = array[array.length - 1];
+        int result = firstIntElement % lastIntElement;
         return result;
     }
 
@@ -24,9 +24,9 @@ public class CalculateModulus {
             throw new IllegalArgumentException("Invalid value of the last element of array 2");
         }
 
-        double x = array[0];
-        double y = array[array.length - 1];
-        double result = x % y;
+        double firstDoubleElement = array[0];
+        double lastDoubleElement = array[array.length - 1];
+        double result = firstIntElement % lastIntElement;
         return result;
 
     }
