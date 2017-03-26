@@ -1,9 +1,9 @@
-package main.java.mihail_metel.homeWork06.arrayUtilsPack;
+package mihail_metel.homeWork6Tests;
 
+import mihail_metel.homeWork06.arrayUtilsPack.*;
+//import mihail_metel.homeWork06.arrayUtilsPack.InvalidValueException;
 import org.junit.Assert;
 import org.junit.Test;
-
-import java.math.BigDecimal;
 
 public class ArrayUtilsTest {
 
@@ -43,7 +43,8 @@ public class ArrayUtilsTest {
 
         try{ArrayUtils.modulus(array);}
         catch (InvalidValueException e){System.out.println("Invalid value error " + e);}
-        try{ArrayUtils.max(array);}
+        try{
+            ArrayUtils.max(array);}
         catch (InvalidValueException e){System.out.println("Invalid value error " + e);}
         try{ArrayUtils.min(array);}
         catch (InvalidValueException e){System.out.println("Invalid value error " + e);}

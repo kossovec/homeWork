@@ -1,4 +1,4 @@
-package main.java.mihail_metel.homeWork06.Users;
+package mihail_metel.homeWork06.Users;
 
 /*TASK 5
 Create сlass UserUtils with following methods

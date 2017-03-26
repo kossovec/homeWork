@@ -1,6 +1,6 @@
-package main.java.mihail_metel.homeWork05.test;
+package mihail_metel.homeWork05Test;
 
-import main.java.mihail_metel.homeWork05.*;
+import mihail_metel.homeWork05.*;
 import org.junit.Assert;
 import org.junit.Test;
 

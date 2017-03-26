@@ -1,4 +1,4 @@
-package main.java.mihail_metel.homeWork05;
+package mihail_metel.homeWork05;
 
 
 public interface API {

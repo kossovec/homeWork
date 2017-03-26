@@ -1,8 +1,8 @@
-package main.java.mihail_metel.homeWork05.test;
+package mihail_metel.homeWork05Test;
 
-import main.java.mihail_metel.homeWork05.FilledRooms;
-import main.java.mihail_metel.homeWork05.HotelsDAOImpl;
-import main.java.mihail_metel.homeWork05.Room;
+import mihail_metel.homeWork05.FilledRooms;
+import mihail_metel.homeWork05.HotelsDAOImpl;
+import mihail_metel.homeWork05.Room;
 import org.junit.Assert;
 import org.junit.Test;
 

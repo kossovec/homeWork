@@ -1,4 +1,4 @@
-package main.java.mihail_metel.homeWork04;
+package mihail_metel.homeWork04;
 
 public interface BankSystem{
     void withdrawOfUser(User user, int amount) throws InvalidValueException;

@@ -1,4 +1,4 @@
-package main.java.mihail_metel.homeWork04;
+package mihail_metel.homeWork04;
 
 public class BankData {
     private int limitOfWithdrawUsd = 100; // TODO - remove constatnt default values

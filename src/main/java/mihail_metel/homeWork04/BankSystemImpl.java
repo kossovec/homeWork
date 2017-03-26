@@ -1,4 +1,4 @@
-package main.java.mihail_metel.homeWork04;
+package mihail_metel.homeWork04;
 
 //TASK 5
 //        Create interface BankSystem with methods:

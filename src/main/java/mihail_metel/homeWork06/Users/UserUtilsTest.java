@@ -1,7 +1,7 @@
-package main.java.mihail_metel.homeWork06.Users;
+package mihail_metel.homeWork06.Users;
 
 import org.junit.Assert;
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 public class UserUtilsTest {
     User[] users = new User[6];

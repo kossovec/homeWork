@@ -1,7 +1,7 @@
-package main.java.mihail_metel.homeWork05.test;
+package mihail_metel.homeWork05Test;
 
-import main.java.mihail_metel.homeWork05.APIImpl;
-import main.java.mihail_metel.homeWork05.FilledRooms;
+import mihail_metel.homeWork05.APIImpl;
+import mihail_metel.homeWork05.FilledRooms;
 import org.junit.Assert;
 import org.junit.Test;
 

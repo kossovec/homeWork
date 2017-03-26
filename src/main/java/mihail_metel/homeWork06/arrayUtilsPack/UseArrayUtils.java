@@ -1,4 +1,4 @@
-package main.java.mihail_metel.homeWork06.arrayUtilsPack;
+package mihail_metel.homeWork06.arrayUtilsPack;
 
 public class UseArrayUtils {
 
