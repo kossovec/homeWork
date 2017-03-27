@@ -1,11 +1,14 @@
 package mihail_metel.homeWork05;
 
+
+import org.testng.internal.Nullable;
+
 import java.util.Arrays;
 
 
 public class HotelsDAOImpl implements HotelsDAO {
 
-    private Room[] rooms;
+    @Nullable private Room[] rooms;
 
     public HotelsDAOImpl(Room[] roomsArray) {
         rooms = roomsArray;

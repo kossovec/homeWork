@@ -8,7 +8,6 @@ public class Controller {
         this.apis = apiArray;
     }
 
-
     public Room[] requstRooms(int price, int persons, String city, String hotel){
         Room[] tempRooms;
         HotelsDAOImpl tempDAO = new HotelsDAOImpl(new Room[0]);

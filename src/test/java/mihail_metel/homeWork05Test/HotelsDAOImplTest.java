@@ -79,16 +79,6 @@ public class HotelsDAOImplTest {
     }
 
     @Test
-    public void getRooms() throws Exception {
-
-    }
-
-    @Test
-    public void setRooms() throws Exception {
-
-    }
-
-    @Test
     public void getRoomCount() throws Exception {
         Assert.assertEquals(hotelsDAOImpl.getRoomCount(),5);
 

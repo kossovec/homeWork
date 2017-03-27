@@ -3,12 +3,12 @@ package mihail_metel.homeWork05;
 
 public class Main {
     public static void main(String[] args) {
-        API[] apiArray = new APIImpl[3];
+        API[] apiArray = new API[3];
         FilledRooms filledRooms = new FilledRooms();
 
-        apiArray[0] = new APIImpl("BookingComAPI", filledRooms.getRooms1() );
-        apiArray[1] = new APIImpl("GoogleAPI", filledRooms.getRooms2() ) ;
-        apiArray[2] = new APIImpl("TripAdvisorAPI", filledRooms.getRooms3() );
+        apiArray[0] = new BookingComAPI(filledRooms.getRooms1() );
+        apiArray[1] = new GoogleAPI(filledRooms.getRooms2() ) ;
+        apiArray[2] = new TripAdvisorAPI(filledRooms.getRooms3() );
 
         Controller controller = new Controller(apiArray);
 
