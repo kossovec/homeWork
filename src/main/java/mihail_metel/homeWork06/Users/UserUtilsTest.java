@@ -1,7 +1,7 @@
 package mihail_metel.homeWork06.Users;
 
 import org.junit.Assert;
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.Test;
 
 public class UserUtilsTest {
     User[] users = new User[6];
