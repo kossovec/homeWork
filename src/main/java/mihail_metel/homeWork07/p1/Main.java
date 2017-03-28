@@ -19,7 +19,7 @@ public class Main {
         User user9 = new User(9, "Oleg", "Gerachenko", "Brovary", 750);
         User user10 = new User(10, "Viktoria", "Kushnir", "Bila Cerkva", 5500);
 
-        Order order1 = new Order(1,2000, Currency.UAH, "Vacuum Cleaner", "Rozetka", user1);
+        final Order order1 = new Order(1,2000, Currency.UAH, "Vacuum Cleaner", "Rozetka", user1);
         Order order2 = new Order(2,3000, Currency.UAH, "Nokia phone", "Rozetka", user2);
         Order order3 = new Order(3,1000, Currency.UAH, "Gaming mouse", "Citrus", user3);
         Order order4 = new Order(4,200, Currency.UAH, "Data cable", "Repka", user4);
@@ -42,15 +42,34 @@ public class Main {
         orderList.add(order9);
         orderList.add(order10);
 
+        orderList.sort(new Comparator<Order>() {
+            @Override
+            public int compare(Order o, Order o2) {
+                return ((Integer) o.getPrice() ).compareTo((Integer) o2.getPrice());
+            }
+        });
+        System.out.println(orderList + "/n");
+
+        orderList.sort(new Comparator<Order>() {
+            @Override
+            public int compare(Order o1, Order o2) {
+                if (o1.getPrice() == o2.getPrice()) {
+                    return o1.getUser().getCity().compareTo(o2.getUser().getCity());
+                }
+                return ((Integer) o1.getPrice() ).compareTo(o2.getPrice());
+            }
+        });
         System.out.println(orderList);
 
         orderList.sort(new Comparator<Order>() {
             @Override
-            public int compare(Order o, Order t1) {
-                return -((Integer) o.getPrice() ).compareTo((Integer) t1.getPrice());
+            public int compare(Order o1, Order o2) {
+                if (o1.getItemName().equals(o2.getItemName())) {
+                    return o1.getUser().getCity().compareTo(o2.getUser().getCity());
+                }
+                return o1.getItemName().compareTo(o2.getItemName());
             }
         });
-
         System.out.println(orderList);
     }
 }

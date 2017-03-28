@@ -20,13 +20,12 @@ public class Order {
 
     @Override
     public String toString() {
-        return "Order{" +
-                "id=" + id +
-                ", price=" + price +
-                ", currency=" + currency +
-                ", itemName='" + itemName + '\'' +
-                ", shopIdentificator='" + shopIdentificator + '\'' +
-                ", user=" + user +
+        return  "\tid=" + id +
+                "\tprice=" + price +
+                "\tcurrency=" + currency +
+                "\titemName='" + itemName + '\'' +
+                "\tshopIdentificator='" + shopIdentificator + '\'' +
+                "\tuser=" + user +
                 "}\n";
     }
 
