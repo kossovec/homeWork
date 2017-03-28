@@ -15,6 +15,8 @@ public class HotelsDAOImpl implements HotelsDAO {
     }
 
     public Room[] findRooms(int price, int persons, String city, String hotel) {
+        if (rooms == null || rooms.length == 0 || city == null || hotel == null) {return new Room[0];}
+
         int foundRoomsCount = 0;
         final int coefficientOfExtension = 2;
         Room[] foundRooms = new Room[foundRoomsCount];
@@ -22,8 +24,8 @@ public class HotelsDAOImpl implements HotelsDAO {
         for (Room room : rooms) {
             if (room.getPrice() == price &&
                     room.getPersons() == persons &&
-                    room.getCityName().equals(city) &&
-                    room.getHotelName().equals(hotel)) {
+                    city.equals(room.getCityName())  &&
+                    hotel.equals(room.getHotelName()) ) {
                 foundRoomsCount++;
                 if (foundRooms.length < foundRoomsCount) {
                     foundRooms = Arrays.copyOf(foundRooms, foundRoomsCount * coefficientOfExtension);
@@ -35,27 +37,36 @@ public class HotelsDAOImpl implements HotelsDAO {
     }
 
     @Override
-    public Room saveNew(Room room) {
-        if (this.findRooms(room.getPrice(), room.getPersons(), room.getCityName(),room.getHotelName() ).length == 0){
+    public boolean saveNew(Room room) {
+        if (room == null ) {return false;}
+        if (this.rooms == null) {rooms = new Room[0];}
+
+        if (findRooms(room.getPrice(), room.getPersons(), room.getCityName(),room.getHotelName() ).length == 0){
             rooms = Arrays.copyOf(rooms, rooms.length + 1);
             rooms[rooms.length - 1] =  room;
-            return rooms[rooms.length - 1];
+            return true;
         }
         else {
             update(room);
-            return room;
+            return true;
         }
     }
 
     @Override
-    public Room saveAny(Room room) {
+    public boolean saveAny(Room room) {
+        if (room == null ) {return false;}
+        if (rooms == null) {rooms = new Room[0];}
+
         rooms = Arrays.copyOf(rooms, rooms.length + 1);
         rooms[rooms.length - 1] =  room;
-        return rooms[rooms.length - 1];
+        return true;
     }
 
     @Override
     public boolean delete(Room room) {
+        if (room == null ) {return false;}
+        if (rooms == null || rooms.length == 0) {return false;}
+
         Room[] tempRooms;
 
         for (int i = 0; i < rooms.length; i++) {
@@ -74,7 +85,7 @@ public class HotelsDAOImpl implements HotelsDAO {
 
     @Override
     public Room update(Room room) {
-        for (int i = 0; i < rooms.length; i++) {
+        for (int i = 0; i < (rooms != null ? rooms.length : 0); i++) {
             if (rooms[i].equals(room) ) {
                 rooms[i] = room;
                 return rooms[i];
@@ -85,7 +96,8 @@ public class HotelsDAOImpl implements HotelsDAO {
 
     @Override
     public Room findById(long id) {
-        for (Room room : rooms) {
+
+        for (Room room : rooms != null ? rooms : new Room[0]) {
             if (room.getId() == id) {
                 return room;
             }
@@ -94,6 +106,7 @@ public class HotelsDAOImpl implements HotelsDAO {
     }
 
     public Room[] getRooms() {
+        if (rooms == null) {rooms = new Room[0];}
         return rooms;
     }
 
@@ -102,6 +115,6 @@ public class HotelsDAOImpl implements HotelsDAO {
     }
 
     public int getRoomCount(){
-        return rooms.length;
+        return rooms != null ? rooms.length : 0;
     }
 }

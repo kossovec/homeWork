@@ -11,19 +11,12 @@ public abstract class APIImpl implements API {
 
     @Override
     public Room[] findRooms(int price, int persons, String city, String hotel) {
-       if (hotelsDAO == null) {return null;}
+       if (hotelsDAO == null) {return new Room[0];}
        return hotelsDAO.findRooms(price, persons, city, hotel);
     }
 
     @Override
     public HotelsDAOImpl getHotelsDAO() {
         return hotelsDAO;
-    }
-
-    @Override
-    public boolean setHotelsDAO(HotelsDAOImpl hotelsDAO) {
-        if (hotelsDAO == null) return false;
-        this.hotelsDAO = hotelsDAO;
-        return true;
     }
 }

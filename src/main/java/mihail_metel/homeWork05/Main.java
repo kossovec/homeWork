@@ -12,9 +12,9 @@ public class Main {
 
         Controller controller = new Controller(apiArray);
 
-        System.out.println(controller.requstRooms(800,1,"Cherkasi", "Hotel 3").length);
-        System.out.println(controller.requstRooms(1000,2,"Odesa", "Hotel 4").length);
-        System.out.println(controller.requstRooms(2000,5,"Charkiv", "Hotel popular").length);
+        System.out.println(controller.requestRooms(800,1,"Cherkasi", "Hotel 3").length);
+        System.out.println(controller.requestRooms(1000,2,"Odesa", "Hotel 4").length);
+        System.out.println(controller.requestRooms(2000,5,"Charkiv", "Hotel popular").length);
 
         System.out.println(controller.check(controller.getAPIArray()[0],controller.getAPIArray()[1]).length);
         System.out.println(controller.check(controller.getAPIArray()[1],controller.getAPIArray()[2]).length);

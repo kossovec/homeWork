@@ -8,7 +8,9 @@ public class Controller {
         this.apis = apiArray;
     }
 
-    public Room[] requstRooms(int price, int persons, String city, String hotel){
+    public Room[] requestRooms(int price, int persons, String city, String hotel){
+        if (apis == null || apis.length == 0) {return new Room[0];}
+
         Room[] tempRooms;
         HotelsDAOImpl tempDAO = new HotelsDAOImpl(new Room[0]);
 
@@ -22,6 +24,11 @@ public class Controller {
     }
 
     public Room[] check(API api1, API api2){
+        if (api1 == null || api2 == null || api1.getHotelsDAO() == null || api2.getHotelsDAO() == null ||
+                api1.getHotelsDAO().getRooms().length == 0 || api2.getHotelsDAO().getRooms().length == 0) {
+            return new Room[0];
+        }
+
         Room[] tempRooms;
         HotelsDAOImpl tempDAO = new HotelsDAOImpl(new Room[0]);
 

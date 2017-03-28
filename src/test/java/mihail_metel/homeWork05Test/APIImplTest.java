@@ -19,16 +19,4 @@ public class APIImplTest {
         Assert.assertEquals("found 0 room",0, booking.findRooms(2000, 3, "Charkiv", "Hotel 5").length );
         Assert.assertEquals("found 0 room",0, booking.findRooms(2000, 5, "Charkivvvv", "Hotel 5").length );
     }
-
-    @Test
-    public void setHotelsDAO() throws Exception {
-        Assert.assertEquals(booking.setHotelsDAO(null),false);
-    }
-
-    @Test
-    public void findRooms_Return_Null_whenDAO_is_NULL() throws Exception {
-        booking.setHotelsDAO(null);
-        Assert.assertNull(booking.findRooms(2000, 5, "Charkiv", "Hotel 5"));
-    }
-
 }
