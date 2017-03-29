@@ -40,7 +40,7 @@ public class ControllerTest {
 
         Assert.assertEquals("one value of search ",1, rooms1.length);
         Assert.assertEquals("one value of search ",1, rooms2.length);
-        Assert.assertEquals("number of found rooms ",2, rooms3.length);
+        Assert.assertEquals("number of found rooms ",1, rooms3.length); // There are 2 such rooms, but as they are equal, only 1 is added
     }
 
     /*Room[] check(API api1, API api2)

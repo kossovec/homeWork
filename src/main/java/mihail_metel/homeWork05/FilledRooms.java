@@ -85,7 +85,7 @@ public class FilledRooms {
         date.setTime(calendar.getTimeInMillis());
         rooms3[3] = new Room(2000,2, date,"Hotel four", "Odesa");
 
-        calendar.set(2017, Calendar.OCTOBER,3);
+        calendar.set(2017, Calendar.JULY,15);
         date.setTime(calendar.getTimeInMillis());
         rooms3[4] = new Room(2000,5, date,"Hotel popular", "Charkiv");
     }

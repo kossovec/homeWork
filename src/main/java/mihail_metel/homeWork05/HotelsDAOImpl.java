@@ -1,8 +1,6 @@
 package mihail_metel.homeWork05;
 
-
-import org.testng.internal.Nullable;
-
+import com.sun.istack.internal.Nullable;
 import java.util.Arrays;
 
 
@@ -37,11 +35,17 @@ public class HotelsDAOImpl implements HotelsDAO {
     }
 
     @Override
-    public boolean saveNew(Room room) {
+    public boolean save(Room room) {
         if (room == null ) {return false;}
         if (this.rooms == null) {rooms = new Room[0];}
 
-        if (findRooms(room.getPrice(), room.getPersons(), room.getCityName(),room.getHotelName() ).length == 0){
+        int foundRooms = 0;
+        for (int i = 0; i < rooms.length; i++) {
+            if (room.equals(rooms[i])) {
+                foundRooms++;
+            }
+        }
+        if (foundRooms == 0){
             rooms = Arrays.copyOf(rooms, rooms.length + 1);
             rooms[rooms.length - 1] =  room;
             return true;
@@ -50,16 +54,6 @@ public class HotelsDAOImpl implements HotelsDAO {
             update(room);
             return true;
         }
-    }
-
-    @Override
-    public boolean saveAny(Room room) {
-        if (room == null ) {return false;}
-        if (rooms == null) {rooms = new Room[0];}
-
-        rooms = Arrays.copyOf(rooms, rooms.length + 1);
-        rooms[rooms.length - 1] =  room;
-        return true;
     }
 
     @Override

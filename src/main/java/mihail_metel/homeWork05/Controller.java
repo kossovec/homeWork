@@ -17,7 +17,7 @@ public class Controller {
         for (int i = 0; i < apis.length; i++) {
             tempRooms = apis[i].findRooms(price, persons, city, hotel) ;
             for (int j = 0; j < tempRooms.length; j++) {
-                tempDAO.saveAny(tempRooms[j]);
+                tempDAO.save(tempRooms[j]);
             }
         }
         return tempDAO.getRooms();
@@ -35,7 +35,7 @@ public class Controller {
         for (int i = 0; i < api1.getHotelsDAO().getRoomCount(); i++) {
             for (int j = 0; j < api2.getHotelsDAO().getRoomCount(); j++) {
                 if (api1.getHotelsDAO().getRooms()[i].equals(api2.getHotelsDAO().getRooms()[j] ) ) {
-                    tempDAO.saveAny(api1.getHotelsDAO().getRooms()[i]);
+                    tempDAO.save(api1.getHotelsDAO().getRooms()[i]);
                 }
             }
         }
