@@ -17,25 +17,6 @@ class UserUtils {
     //users are equal when all their field are equal
     static User[] uniqueUsers(User[] users){
         if (users == null || users.length == 0){return null;}
-        User[] uniqueUsers = new User[users.length];
-        int uniqueUsersCount = 0;
-        int rep;
-        for (int i = 0; i < users.length; i++) {
-            rep = 0;
-            for (int j = 0; j < users.length; j++) {
-                if ( (i != j) && users[i].equals(users[j])) {
-                    rep++;
-                }
-            }
-            if (rep == 0) {
-                uniqueUsers[uniqueUsersCount++] = users[i];
-            }
-        }
-        return Arrays.copyOf(uniqueUsers, uniqueUsersCount);
-    }
-
-    static User[] uniqueUsers2(User[] users){
-        if (users == null || users.length == 0){return null;}
 
         int k = 0;
         int uniqueUsersCount = 0;
