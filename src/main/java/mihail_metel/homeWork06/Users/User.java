@@ -13,7 +13,7 @@ int balance
 and constructor with all fields.
 */
 
-public final class User {
+final class User {
     private long id;
     private String firstName;
     private String lastName;

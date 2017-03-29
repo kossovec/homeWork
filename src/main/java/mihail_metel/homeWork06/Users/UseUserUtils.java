@@ -18,7 +18,7 @@ public class UseUserUtils {
         users[5] = new User(6,"Natasha", "Petrova", 6000, 40000);
 
 
-        System.out.println(UserUtils.uniqueUsers(users).length);
+        System.out.println(UserUtils.uniqueUsers2(users).length);
 
         System.out.println(UserUtils.usersWithContitionalBalance(users, 0).length);
         System.out.println(UserUtils.usersWithContitionalBalance(users, 10000).length);
