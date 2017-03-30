@@ -28,8 +28,8 @@ public class SpeedOfCollections {
         Timer.measureTime(stringsArrayList,1000);
         Timer.measureTime(stringsLinkedList,1000);
 
-        Timer.measureTime(stringsArrayList,1000);
-        Timer.measureTime(stringsLinkedList,1000);
+        Timer.measureTime(stringsArrayList,10000);
+        Timer.measureTime(stringsLinkedList,10000);
 
     }
 }
