@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-public class Main {
+public class MainWithList {
 
     public static void main(String[] args) {
         User user1 = new User(1, "Pavel", "Ivanov", "Kyiv", 2500);
@@ -19,7 +19,7 @@ public class Main {
         User user9 = new User(9, "Oleg", "Gerachenko", "Brovary", 750);
         User user10 = new User(10, "Viktoria", "Kushnir", "Bila Cerkva", 5500);
 
-        final Order order1 = new Order(1,2000, Currency.UAH, "Vacuum Cleaner", "Rozetka", user1);
+        Order order1 = new Order(1,2000, Currency.UAH, "Vacuum Cleaner", "Rozetka", user1);
         Order order2 = new Order(2,3000, Currency.UAH, "Nokia phone", "Rozetka", user2);
         Order order3 = new Order(3,1000, Currency.UAH, "Gaming mouse", "Citrus", user3);
         Order order4 = new Order(4,200, Currency.UAH, "Data cable", "Repka", user4);
@@ -30,7 +30,7 @@ public class Main {
         Order order9 = new Order(9,25000, Currency.UAH, "Electro-bike", "MoYo", user9);
         Order order10 = new Order(10,300, Currency.UAH, "Music disc", "Foxtrot", user10);
 
-        List orderList = new ArrayList<Order>();
+        List<Order> orderList = new ArrayList<Order>();
         orderList.add(order1);
         orderList.add(order2);
         orderList.add(order3);
