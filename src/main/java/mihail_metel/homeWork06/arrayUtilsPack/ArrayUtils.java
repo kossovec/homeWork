@@ -44,8 +44,7 @@ public final class ArrayUtils {
         int[] even = new int[array.length];
         for (int i = 0; i < array.length; i++) {
             if ((array[i] % 2) == 0) {
-                evenCount++;
-                even[evenCount-1] = array[i];
+                even[evenCount++] = array[i];
             }
         }
         return Arrays.copyOf(even, evenCount);

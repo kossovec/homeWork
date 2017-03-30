@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-public class Main {
+public class MainWithList {
 
     public static void main(String[] args) {
         User user1 = new User(1, "Pavel", "Ivanov", "Kyiv", 2500);
@@ -30,7 +30,7 @@ public class Main {
         Order order9 = new Order(9,25000, Currency.UAH, "Electro-bike", "MoYo", user9);
         Order order10 = new Order(10,300, Currency.UAH, "Music disc", "Foxtrot", user10);
 
-        List orderList = new ArrayList<Order>();
+        List<Order> orderList = new ArrayList<Order>();
         orderList.add(order1);
         orderList.add(order2);
         orderList.add(order3);
@@ -42,15 +42,34 @@ public class Main {
         orderList.add(order9);
         orderList.add(order10);
 
+        orderList.sort(new Comparator<Order>() {
+            @Override
+            public int compare(Order o, Order o2) {
+                return ((Integer) o.getPrice() ).compareTo((Integer) o2.getPrice());
+            }
+        });
+        System.out.println(orderList + "/n");
+
+        orderList.sort(new Comparator<Order>() {
+            @Override
+            public int compare(Order o1, Order o2) {
+                if (o1.getPrice() == o2.getPrice()) {
+                    return o1.getUser().getCity().compareTo(o2.getUser().getCity());
+                }
+                return ((Integer) o1.getPrice() ).compareTo(o2.getPrice());
+            }
+        });
         System.out.println(orderList);
 
         orderList.sort(new Comparator<Order>() {
             @Override
-            public int compare(Order o, Order t1) {
-                return -((Integer) o.getPrice() ).compareTo((Integer) t1.getPrice());
+            public int compare(Order o1, Order o2) {
+                if (o1.getItemName().equals(o2.getItemName())) {
+                    return o1.getUser().getCity().compareTo(o2.getUser().getCity());
+                }
+                return o1.getItemName().compareTo(o2.getItemName());
             }
         });
-
         System.out.println(orderList);
     }
 }

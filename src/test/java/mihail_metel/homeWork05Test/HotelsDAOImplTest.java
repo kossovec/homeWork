@@ -27,17 +27,22 @@ public class HotelsDAOImplTest {
     public void save() throws Exception {
         Room room1 = hotelsDAOImpl.findRooms(2000, 5, "Charkiv", "Hotel 5")[0];
 
-        hotelsDAOImpl.saveNew(room1);
+        hotelsDAOImpl.save(room1);
         Assert.assertEquals(5,hotelsDAOImpl.getRoomCount());
 
         room1= new Room(200,5,room1.getDateAvailableFrom(), "Hotel11", "City");
-        hotelsDAOImpl.saveNew(room1);
+        hotelsDAOImpl.save(room1);
         Assert.assertEquals(6,hotelsDAOImpl.getRoomCount());
 
-        hotelsDAOImpl.saveNew(room1);
+        hotelsDAOImpl.save(room1);
         Assert.assertEquals(6,hotelsDAOImpl.getRoomCount());
 
-        hotelsDAOImpl.saveAny(room1);
+        room1.setCityName("Another City"); // reference, also changes city in array!
+        hotelsDAOImpl.save(room1);          // rooms are equal in room1 and in array
+        Assert.assertEquals(6,hotelsDAOImpl.getRoomCount());
+
+        room1 = new Room(200,5,room1.getDateAvailableFrom(), "Hotel11", "City55");
+        hotelsDAOImpl.save(room1);
         Assert.assertEquals(7,hotelsDAOImpl.getRoomCount());
     }
 
@@ -76,16 +81,6 @@ public class HotelsDAOImplTest {
         long id = room1.getId();
 
         Assert.assertEquals(hotelsDAOImpl.findById(id) ,room1);
-    }
-
-    @Test
-    public void getRooms() throws Exception {
-
-    }
-
-    @Test
-    public void setRooms() throws Exception {
-
     }
 
     @Test

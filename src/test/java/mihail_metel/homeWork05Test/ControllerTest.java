@@ -7,13 +7,13 @@ import org.junit.Test;
 
 public class ControllerTest {
     private Controller controller;
-    API[] apiArray = new APIImpl[3];
+    API[] apiArray = new API[3];
     FilledRooms filledRooms = new FilledRooms();
 
     {
-        apiArray[0] = new APIImpl("BookingComAPI", filledRooms.getRooms1() );
-        apiArray[1] = new APIImpl("GoogleAPI", filledRooms.getRooms2() ) ;
-        apiArray[2] = new APIImpl("TripAdvisorAPI", filledRooms.getRooms3() );
+        apiArray[0] = new BookingComAPI(filledRooms.getRooms1() );
+        apiArray[1] = new GoogleAPI(filledRooms.getRooms2() ) ;
+        apiArray[2] = new TripAdvisorAPI(filledRooms.getRooms3() );
 
         controller = new Controller(apiArray);
     }
@@ -34,13 +34,13 @@ public class ControllerTest {
 
         //rooms3[4] = new Room(2000,5, date,"Hotel popular", "Charkiv"); - встречается 2 раза
 
-        Room[] rooms1 = controller.requstRooms(800,1,"Cherkasi", "Hotel 3");
-        Room[] rooms2 = controller.requstRooms(1000,2,"Odesa", "Hotel 4");
-        Room[] rooms3 = controller.requstRooms(2000,5,"Charkiv", "Hotel popular");
+        Room[] rooms1 = controller.requestRooms(800,1,"Cherkasi", "Hotel 3");
+        Room[] rooms2 = controller.requestRooms(1000,2,"Odesa", "Hotel 4");
+        Room[] rooms3 = controller.requestRooms(2000,5,"Charkiv", "Hotel popular");
 
         Assert.assertEquals("one value of search ",1, rooms1.length);
         Assert.assertEquals("one value of search ",1, rooms2.length);
-        Assert.assertEquals("number of found rooms ",2, rooms3.length);
+        Assert.assertEquals("number of found rooms ",1, rooms3.length); // There are 2 such rooms, but as they are equal, only 1 is added
     }
 
     /*Room[] check(API api1, API api2)

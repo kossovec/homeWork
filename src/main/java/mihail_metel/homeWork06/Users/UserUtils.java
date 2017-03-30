@@ -12,27 +12,38 @@ User[] deleteEmptyUsers(User[] users)*/
 
 import java.util.Arrays;
 
-public class UserUtils {
+class UserUtils {
 
     //users are equal when all their field are equal
     static User[] uniqueUsers(User[] users){
         if (users == null || users.length == 0){return null;}
-        User[] uniqueUsers = new User[users.length];
+
+        int k = 0;
         int uniqueUsersCount = 0;
-        int rep;
+        int[] r = new int[users.length];
+
         for (int i = 0; i < users.length; i++) {
-            rep = 0;
-            for (int i1 = 0; i1 < users.length; i1++) {
-                if ( (i != i1) && users[i].equals(users[i1])) {
-                    rep++;
+            if (r[i] == 0) {
+                for (int j = 0; j < users.length; j++) {
+                    if ( (i != j) && r[j] == 0 && users[i].equals(users[j])) {
+                        r[i]++;
+                        r[j]++;
+                    }
+                }
+                if (r[i] == 0) {
+                    r[i] = -1;
+                    uniqueUsersCount++;
                 }
             }
-            if (rep == 0) {
-                uniqueUsersCount++;
-                uniqueUsers[uniqueUsersCount - 1] = users[i];
+        }
+        User[] uniqueUsers = new User[uniqueUsersCount];
+        for (int i = 0; i < uniqueUsersCount ; i++) {
+            if (r[i] == -1) {
+                uniqueUsers[k] = users[i];
+                k++;
             }
         }
-        return Arrays.copyOf(uniqueUsers, uniqueUsersCount);
+        return uniqueUsers;
     }
 
     //user’s balance == balance
@@ -41,7 +52,6 @@ public class UserUtils {
 
         User[] balanceUsers = new User[users.length];
         int balanceUsersCount = 0;
-        int rep;
         for (int i = 0; i < users.length; i++) {
             if (users[i].getBalance() == balance) {
                 balanceUsersCount++;
@@ -51,7 +61,7 @@ public class UserUtils {
         return Arrays.copyOf(balanceUsers, balanceUsersCount);
     }
 
-    static final User[] paySalaryToUsers(User[] users){
+    static User[] paySalaryToUsers(User[] users){
         if (users == null || users.length == 0){return null;}
 
         //        users[5] = new User(6,"Natasha", "Petrova", 6000, 40000);
@@ -61,7 +71,7 @@ public class UserUtils {
         return users;
     }
 
-    static final long[] getUsersId(User[] users) {
+    static long[] getUsersId(User[] users) {
         if (users == null || users.length == 0){return null;}
 
         long[] usersID = new long[users.length];
@@ -78,7 +88,7 @@ public class UserUtils {
         User[] notEmptyUsers = new User[users.length];
         int notEmptyUsersCount = 0;
         for (int i = 0; i < users.length; i++) {
-            if ((users[i].getSalary() != 0) || (users[i].getBalance() != 0)) {
+            if ((users[i].getSalary() != 0) && (users[i].getBalance() != 0)) {
                 notEmptyUsersCount++;
                 notEmptyUsers[notEmptyUsersCount - 1] = users[i];
             }

@@ -8,28 +8,34 @@ public class Controller {
         this.apis = apiArray;
     }
 
+    public Room[] requestRooms(int price, int persons, String city, String hotel){
+        if (apis == null || apis.length == 0) {return new Room[0];}
 
-    public Room[] requstRooms(int price, int persons, String city, String hotel){
         Room[] tempRooms;
         HotelsDAOImpl tempDAO = new HotelsDAOImpl(new Room[0]);
 
         for (int i = 0; i < apis.length; i++) {
             tempRooms = apis[i].findRooms(price, persons, city, hotel) ;
             for (int j = 0; j < tempRooms.length; j++) {
-                tempDAO.saveAny(tempRooms[j]);
+                tempDAO.save(tempRooms[j]);
             }
         }
         return tempDAO.getRooms();
     }
 
     public Room[] check(API api1, API api2){
+        if (api1 == null || api2 == null || api1.getHotelsDAO() == null || api2.getHotelsDAO() == null ||
+                api1.getHotelsDAO().getRooms().length == 0 || api2.getHotelsDAO().getRooms().length == 0) {
+            return new Room[0];
+        }
+
         Room[] tempRooms;
         HotelsDAOImpl tempDAO = new HotelsDAOImpl(new Room[0]);
 
         for (int i = 0; i < api1.getHotelsDAO().getRoomCount(); i++) {
             for (int j = 0; j < api2.getHotelsDAO().getRoomCount(); j++) {
                 if (api1.getHotelsDAO().getRooms()[i].equals(api2.getHotelsDAO().getRooms()[j] ) ) {
-                    tempDAO.saveAny(api1.getHotelsDAO().getRooms()[i]);
+                    tempDAO.save(api1.getHotelsDAO().getRooms()[i]);
                 }
             }
         }
