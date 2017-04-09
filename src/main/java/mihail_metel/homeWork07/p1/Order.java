@@ -76,4 +76,24 @@ public class Order {
     public void setUser(User user) {
         this.user = user;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Order order = (Order) o;
+
+        if (price != order.price) return false;
+        if (currency != order.currency) return false;
+        return itemName != null ? itemName.equals(order.itemName) : order.itemName == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = price;
+        result = 31 * result + currency.hashCode();
+        result = 31 * result + (itemName != null ? itemName.hashCode() : 0);
+        return result;
+    }
 }
