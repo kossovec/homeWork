@@ -72,8 +72,7 @@ public class java8demo {
         };
 
         System.out.println("\nSorted by price and city\n");
-        orders.sort(byPriceAscAndCity);
-        for (Order order : orders) {
+        orders.sort(byPriceAscAndCity); for (Order order : orders) {
             System.out.println(order);
         }
 
