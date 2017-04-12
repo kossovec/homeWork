@@ -61,8 +61,10 @@ public class Main {
 
         System.out.println("выводит заказы в uah");
         System.out.println(OrderUtils.separateUahAndUSDOrders(listOrders).get(Currency.UAH));
-//
-//                -разделите список на столько списков, сколько уникальных городов в User
+
+        System.out.println("разделите список на столько списков, сколько уникальных городов в User");
+        System.out.println(OrderUtils.divideByCities(listOrders));
+//                -
 //
 //        -проверьте, содержит ли сет заказ, где фамилия пользователя - “Petrov”
 //        -удалите заказы в USD

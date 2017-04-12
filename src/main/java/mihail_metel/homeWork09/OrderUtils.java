@@ -2,6 +2,7 @@ package mihail_metel.homeWork09;
 
 import mihail_metel.homeWork07.p1.Currency;
 import mihail_metel.homeWork07.p1.Order;
+import mihail_metel.homeWork07.p1.User;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -59,5 +60,11 @@ public class OrderUtils {
         Stream<Order> streamOrders1 = listOrders.stream();
         mapOfOrdersWithDifferentCurrencies.put(Currency.USD,streamOrders1.filter(o->o.getCurrency() == Currency.USD).collect(Collectors.toList()) );
         return mapOfOrdersWithDifferentCurrencies;
+    }
+
+    public static Map<String, Order> divideByCities(List<Order> listOrders) {
+        Stream<Order> streamOrders = listOrders.stream();
+        Map<String, Order> map = streamOrders.collect(Collectors.toMap(o1->o1.getUser().getCity(),o1->o1));
+        return map;
     }
 }
