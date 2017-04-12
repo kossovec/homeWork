@@ -1,10 +1,10 @@
 package mihail_metel.homeWork09;
 
-import mihail_metel.homeWork07.p1.*;
+import mihail_metel.homeWork07.p1.Currency;
+import mihail_metel.homeWork07.p1.Order;
+import mihail_metel.homeWork07.p1.User;
 
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 
 public class Main {
