@@ -2,9 +2,10 @@ package mihail_metel.homeWork09;
 
 import mihail_metel.homeWork07.p1.Currency;
 import mihail_metel.homeWork07.p1.Order;
-import mihail_metel.homeWork07.p1.User;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 

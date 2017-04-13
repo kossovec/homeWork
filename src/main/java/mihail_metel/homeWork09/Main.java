@@ -70,6 +70,6 @@ public class Main {
         System.out.println(OrderUtils.checkSurname(surname, listOrders));
 
         System.out.println("удалите заказы в USD");
-        OrderUtils.deleteCurrencyOrders(listOrders, Currency.USD);
+        System.out.println(OrderUtils.deleteCurrencyOrders(listOrders, Currency.USD));
     }
 }
