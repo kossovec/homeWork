@@ -62,9 +62,15 @@ public class OrderUtils {
         return mapOfOrdersWithDifferentCurrencies;
     }
 
-    public static Map<String, Order> divideByCities(List<Order> listOrders) {
-        Stream<Order> streamOrders = listOrders.stream();
-        Map<String, Order> map = streamOrders.collect(Collectors.toMap(o1->o1.getUser().getCity(),o1->o1));
-        return map;
+    public static Map<String, List<Order>> divideByCities(List<Order> listOrders) {
+        return listOrders.stream().collect(Collectors.groupingBy(o->o.getUser().getCity()));
+    }
+
+    public static boolean checkSurname(String surname, List<Order> listOrders) {
+        return listOrders.stream().filter(o->o.getUser().getLastName().equals(surname)).count() > 0;
+    }
+
+    public static List<Order> deleteCurrencyOrders(List<Order> listOrders, Currency currency) {
+        return listOrders.stream().filter(o-> (o.getCurrency() != currency)).collect(Collectors.toList());
     }
 }
