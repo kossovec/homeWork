@@ -1,10 +1,10 @@
 package mihail_metel.homeWork09;
 
-import mihail_metel.homeWork07.p1.*;
+import mihail_metel.homeWork07.p1.Currency;
+import mihail_metel.homeWork07.p1.Order;
+import mihail_metel.homeWork07.p1.User;
 
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 
 public class Main {
@@ -13,10 +13,10 @@ public class Main {
         User user2 = new User(2, "Ivan", "Petrov", "Lviv", 4500);
         User user3 = new User(3, "Nikoloay", "Slonov", "Charkiv", 1500);
         User user4 = new User(4, "Sergey", "Petrenko", "Kyiv", 2500);
-        User user5 = new User(5, "Mihail", "Gorbachov", "Nikolaev", 2000);
+        User user5 = new User(5, "Mihail", "Gorbachov", "Brovary", 2000);
         User user6 = new User(6, "Kiril", "Poliakov", "Mariupol", 500);
         User user7 = new User(7, "Natasha", "Segeeva", "Obuhov", 100);
-        User user8 = new User(8, "Olia", "Parasko", "Irpen", 10000);
+        User user8 = new User(8, "Olia", "Parasko", "Brovary", 10000);
         User user9 = new User(9, "Oleg", "Gerachenko", "Brovary", 750);
         User user10 = new User(10, "Viktoria", "Kushnir", "Bila Cerkva", 5500);
 
@@ -61,10 +61,15 @@ public class Main {
 
         System.out.println("выводит заказы в uah");
         System.out.println(OrderUtils.separateUahAndUSDOrders(listOrders).get(Currency.UAH));
-//
-//                -разделите список на столько списков, сколько уникальных городов в User
-//
-//        -проверьте, содержит ли сет заказ, где фамилия пользователя - “Petrov”
-//        -удалите заказы в USD
+
+        System.out.println("разделите список на столько списков, сколько уникальных городов в User");
+        System.out.println(OrderUtils.divideByCities(listOrders));
+
+        System.out.println("проверьте, содержит ли сет заказ, где фамилия пользователя - Petrov");
+        String surname = "Petrov";
+        System.out.println(OrderUtils.checkSurname(surname, listOrders));
+
+        System.out.println("удалите заказы в USD");
+        System.out.println(OrderUtils.deleteCurrencyOrders(listOrders, Currency.USD));
     }
 }

@@ -3,7 +3,9 @@ package mihail_metel.homeWork09;
 import mihail_metel.homeWork07.p1.Currency;
 import mihail_metel.homeWork07.p1.Order;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -59,5 +61,17 @@ public class OrderUtils {
         Stream<Order> streamOrders1 = listOrders.stream();
         mapOfOrdersWithDifferentCurrencies.put(Currency.USD,streamOrders1.filter(o->o.getCurrency() == Currency.USD).collect(Collectors.toList()) );
         return mapOfOrdersWithDifferentCurrencies;
+    }
+
+    public static Map<String, List<Order>> divideByCities(List<Order> listOrders) {
+        return listOrders.stream().collect(Collectors.groupingBy(o->o.getUser().getCity()));
+    }
+
+    public static boolean checkSurname(String surname, List<Order> listOrders) {
+        return listOrders.stream().filter(o->o.getUser().getLastName().equals(surname)).count() > 0;
+    }
+
+    public static List<Order> deleteCurrencyOrders(List<Order> listOrders, Currency currency) {
+        return listOrders.stream().filter(o-> (o.getCurrency() != currency)).collect(Collectors.toList());
     }
 }
