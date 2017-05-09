@@ -1,6 +1,7 @@
 package crazyjedi.homeWork9;
 
 
+import com.sun.org.apache.xpath.internal.operations.Or;
 import crazyjedi.homeWork7.user_methods.Order;
 import crazyjedi.homeWork7.user_methods.User;
 
@@ -57,7 +58,7 @@ public class java8demo {
             System.out.println(order);
         }
 
-        Comparator<Order> byPrice = (Order o1, Order o2) -> Integer.compare(o1.getPrice(),o2.getPrice());
+        Comparator<Order> byPrice = OrderComparatorFactory.getOrderComparator(OrderComparatorFactory.COMPARATORS.PRICE);
         orders.sort(byPrice);
 
         System.out.println("\nSorted by price\n");
@@ -66,32 +67,16 @@ public class java8demo {
             System.out.println(order);
         }
 
-        Comparator<Order> byPriceAscAndCity = (Order o1, Order o2) -> {
-            int priceRes=Integer.compare(o1.getPrice(),o2.getPrice());
-            return priceRes!=0?priceRes:o1.getUser().getCity().toLowerCase().compareTo(o2.getUser().getCity().toLowerCase());
-        };
+        Comparator<Order> byPriceAscAndCity = OrderComparatorFactory
+                .getOrderComparator(OrderComparatorFactory.COMPARATORS.PRICE_AND_CITY);
 
         System.out.println("\nSorted by price and city\n");
         orders.sort(byPriceAscAndCity); for (Order order : orders) {
             System.out.println(order);
         }
 
-        Comparator<Order> byNameIdAndCity = (Order o1, Order o2) -> {
-
-            int nameRes = o1.getItemName().toLowerCase().compareTo(o2.getItemName().toLowerCase());
-            int idRes=Long.compare(o1.getId(),o2.getId());
-            int cityRes=o1.getUser().getCity().toLowerCase().compareTo(o2.getUser().getCity().toLowerCase());
-
-            if(nameRes!=0){
-                return nameRes;
-            }
-
-            if(idRes!=0){
-                return idRes;
-            }
-
-            return cityRes;
-        };
+        Comparator<Order> byNameIdAndCity = OrderComparatorFactory
+                .getOrderComparator(OrderComparatorFactory.COMPARATORS.NAME_ID_CITY);
 
         System.out.println("\nSorted by name, id and city\n");
         orders.sort(byNameIdAndCity);
